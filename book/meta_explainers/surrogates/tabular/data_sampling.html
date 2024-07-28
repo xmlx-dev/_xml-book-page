@@ -1,126 +1,195 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../../../../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1.3.2. Data Sampling &#8212; eXplainable&lt;br&gt;Machine Learning</title>
-    
+    <title>1.4.2. Data Sampling &#8212; eXplainable&lt;br&gt;Machine Learning</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/xmlx.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/xmlx.css?v=cffff2e3" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-    <script src="../../../../_static/jquery.js"></script>
-    <script src="../../../../_static/underscore.js"></script>
-    <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/clipboard.min.js"></script>
-    <script src="../../../../_static/copybutton.js"></script>
-    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=9d383507"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-6635EH38S9"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-6635EH38S9');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-6635EH38S9');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"IR": "\\mathit{IR}", "argmin": "\\mathop{\\operatorname{arg\\,min}}\\limits", "argmax": "\\mathop{\\operatorname{arg\\,max}}\\limits"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="canonical" href="https://book.xmlx.io/book/meta_explainers/surrogates/tabular/data_sampling.html" />
-    <link rel="shortcut icon" href="../../../../_static/bulb.svg"/>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/meta_explainers/surrogates/tabular/data_sampling';</script>
+    <link rel="canonical" href="https://book.xmlx.dev/book/meta_explainers/surrogates/tabular/data_sampling.html" />
+    <link rel="icon" href="../../../../_static/bulb.svg"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="1.3.3. Explanation Generation" href="explanation_generation.html" />
-    <link rel="prev" title="1.3.1. Binary Interpretable Representations for Tabular Data" href="interpretable_representation.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-6635EH38S9"></script>
-<script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){ dataLayer.push(arguments); }
-                    gtag('js', new Date());
-                    gtag('config', 'G-6635EH38S9');
-                </script>
-
+    <link rel="next" title="1.4.3. Explanation Generation" href="explanation_generation.html" />
+    <link rel="prev" title="1.4.1. Binary Interpretable Representations for Tabular Data" href="interpretable_representation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../../../index.html">
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../README.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../../../_static/bulb.svg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">eXplainable<br>Machine Learning</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../../../_static/bulb.svg" class="logo__image only-light" alt="eXplainable<br>Machine Learning - Home"/>
+    <script>document.write(`<img src="../../../../_static/bulb.svg" class="logo__image only-dark" alt="eXplainable<br>Machine Learning - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -130,608 +199,350 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../../preface/index.html">
-   Preface
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../preface/glossary.html">
-     Glossary
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../preface/preliminary.html">
-     Preliminary Information
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../preface/data.html">
-     Modules, Data Sets and Models
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../../index.html">
-   Meta-Explainers
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active has-children">
-    <a class="reference internal" href="../index.html">
-     1. Surrogates
-    </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul class="current">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../intro.html">
-       1.1. Overview
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../image.html">
-       1.2. Image Surrogates
-      </a>
-     </li>
-     <li class="toctree-l3 current active has-children">
-      <a class="reference internal" href="index.html">
-       1.3. Tabular Surrogates
-      </a>
-      <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-      <label for="toctree-checkbox-4">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul class="current">
-       <li class="toctree-l4">
-        <a class="reference internal" href="interpretable_representation.html">
-         1.3.1. Binary Interpretable Representations for Tabular Data
-        </a>
-       </li>
-       <li class="toctree-l4 current active">
-        <a class="current reference internal" href="#">
-         1.3.2. Data Sampling
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="explanation_generation.html">
-         1.3.3. Explanation Generation
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="../examples/index.html">
-       1.4. Interactive Examples
-      </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-      <label for="toctree-checkbox-5">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../examples/ex_tabular.html">
-         1.4.1. Surrogate Explainer of Tabular Data
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../examples/ex_ols.html">
-         1.4.2. Investigating Linear Surrogate Explainers of Tabular Data
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../bibliography/bibliography.html">
-   Bibliography
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../genindex.html">
-   Index
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://book.xmlx.io/docs/">
-   XML Book Documentation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://xmlx.io/">
-   XMLX Homepage
-  </a>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../preface/index.html">Preface</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../preface/glossary.html">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../preface/preliminary.html">Preliminary Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../preface/data.html">Modules, Data Sets and Models</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../index.html">Meta-Explainers</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../index.html">1. Surrogates</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../intro.html">1.1. Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../text.html">1.2. Text Surrogates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../image.html">1.3. Image Surrogates</a></li>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="index.html">1.4. Tabular Surrogates</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="interpretable_representation.html">1.4.1. Binary Interpretable Representations for Tabular Data</a></li>
+<li class="toctree-l4 current active"><a class="current reference internal" href="#">1.4.2. Data Sampling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="explanation_generation.html">1.4.3. Explanation Generation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../examples/index.html">1.5. Interactive Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../examples/ex_tabular.html">1.5.1. Surrogate Explainer of Tabular Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../examples/ex_ols.html">1.5.2. Investigating Linear Surrogate Explainers of Tabular Data</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bibliography/bibliography.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://book.xmlx.dev/docs/">XML Book Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://xmlx.dev/">XMLX Homepage</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            <a href="https://github.com/xmlx-io/xml-book/blob/master/LICENCE"><img src="https://img.shields.io/badge/licence-CC%20BY--NC--SA%204.0-lightgrey" alt="Licence"></a> </br> <a href="https://doi.org/XX.XXXX/zenodo.XXXXXXX"><img src="https://zenodo.org/badge/DOI/XX.XXXX/zenodo.XXXXXXX.svg" alt="DOI"></a>
-
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/xmlx-io/xml-book/master?urlpath=lab/tree/book/meta_explainers/surrogates/tabular/data_sampling.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../../../../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://colab.research.google.com/github/xmlx-io/xml-book/blob/master/book/meta_explainers/surrogates/tabular/data_sampling.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../../../../_static/images/logo_colab.png">
-  </span>
-<span class="headerbtn__text-container">Colab</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/xmlx-dev/xml-book/master?urlpath=lab/tree/book/meta_explainers/surrogates/tabular/data_sampling.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/xmlx-dev/xml-book/blob/master/book/meta_explainers/surrogates/tabular/data_sampling.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/xmlx-dev/xml-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/xmlx-dev/xml-book/edit/master/book/meta_explainers/surrogates/tabular/data_sampling.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/xmlx-dev/xml-book/issues/new?title=Issue%20on%20page%20%2Fbook/meta_explainers/surrogates/tabular/data_sampling.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../_sources/book/meta_explainers/surrogates/tabular/data_sampling.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../../../../_sources/book/meta_explainers/surrogates/tabular/data_sampling.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/xmlx-io/xml-book"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/xmlx-io/xml-book/issues/new?title=Issue%20on%20page%20%2Fbook/meta_explainers/surrogates/tabular/data_sampling.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/xmlx-io/xml-book/edit/master/book/meta_explainers/surrogates/tabular/data_sampling.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../../../_sources/book/meta_explainers/surrogates/tabular/data_sampling.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download notebook file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="../../../../_sources/book/meta_explainers/surrogates/tabular/data_sampling.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </button>
-
-      </li>
+</div></div>
       
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
+    </div>
   
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#toy-example-two-moons">
-   Toy Example – Two Moons
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#loading-the-data">
-     Loading the Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#loading-the-black-box-models">
-     Loading the Black-Box Models
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selecting-an-instance-to-be-explained">
-     Selecting an Instance to be Explained
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sampling">
-     Sampling
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#normal-sampling">
-       Normal Sampling
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#truncated-normal-sampling">
-       Truncated Normal Sampling
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#mixup-sampling">
-       Mixup Sampling
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#normal-class-discovery">
-       Normal Class Discovery
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#samplers-comparison">
-       Samplers Comparison
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#measuring-sampling-quality">
-     Measuring Sampling Quality
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sampling-from-interpretable-representations">
-     Sampling from Interpretable Representations
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#real-life-data-bikes-sharing">
-   Real-life Data – Bikes Sharing
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#loading-data-and-black-boxes">
-     Loading Data and Black Boxes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#choosing-instances">
-     Choosing Instances
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#testing-samplers">
-     Testing Samplers
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Data Sampling</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#toy-example-two-moons">
-   Toy Example – Two Moons
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#loading-the-data">
-     Loading the Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#loading-the-black-box-models">
-     Loading the Black-Box Models
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selecting-an-instance-to-be-explained">
-     Selecting an Instance to be Explained
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sampling">
-     Sampling
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#normal-sampling">
-       Normal Sampling
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#truncated-normal-sampling">
-       Truncated Normal Sampling
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#mixup-sampling">
-       Mixup Sampling
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#normal-class-discovery">
-       Normal Class Discovery
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#samplers-comparison">
-       Samplers Comparison
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#measuring-sampling-quality">
-     Measuring Sampling Quality
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sampling-from-interpretable-representations">
-     Sampling from Interpretable Representations
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#real-life-data-bikes-sharing">
-   Real-life Data – Bikes Sharing
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#loading-data-and-black-boxes">
-     Loading Data and Black Boxes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#choosing-instances">
-     Choosing Instances
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#testing-samplers">
-     Testing Samplers
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Data Sampling</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toy-example-two-moons">Toy Example – Two Moons</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-data">Loading the Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-black-box-models">Loading the Black-Box Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-an-instance-to-be-explained">Selecting an Instance to be Explained</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling">Sampling</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-sampling">Normal Sampling</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#truncated-normal-sampling">Truncated Normal Sampling</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mixup-sampling">Mixup Sampling</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-class-discovery">Normal Class Discovery</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#samplers-comparison">Samplers Comparison</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-sampling-quality">Measuring Sampling Quality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-from-interpretable-representations">Sampling from Interpretable Representations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-life-data-bikes-sharing">Real-life Data – Bikes Sharing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-data-and-black-boxes">Loading Data and Black Boxes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-instances">Choosing Instances</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-samplers">Testing Samplers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="data-sampling">
-<span id="text-meta-explainers-surrogates-tabular-data-sampling"></span><h1><span class="section-number">1.3.2. </span>Data Sampling<a class="headerlink" href="#data-sampling" title="Permalink to this headline">#</a></h1>
+<span id="text-meta-explainers-surrogates-tabular-data-sampling"></span><h1><span class="section-number">1.4.2. </span>Data Sampling<a class="headerlink" href="#data-sampling" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, we need to set up the environment.</span>
@@ -751,7 +562,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:02:49 fatf.utils.array.tools INFO     Using numpy&#39;s numpy.lib.recfunctions.structured_to_unstructured as fatf.utils.array.tools.structured_to_unstructured and fatf.utils.array.tools.structured_to_unstructured_row.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:34:45 fatf.utils.array.tools INFO     Using numpy&#39;s numpy.lib.recfunctions.structured_to_unstructured as fatf.utils.array.tools.structured_to_unstructured and fatf.utils.array.tools.structured_to_unstructured_row.
 </pre></div>
 </div>
 </div>
@@ -776,12 +587,12 @@ class as the foundation of your own method.
 It implements a collection of helper methods and in most of the cases writing
 your own <code class="docutils literal notranslate"><span class="pre">__init__</span></code> and <code class="docutils literal notranslate"><span class="pre">sample</span></code> methods suffices.</p>
 <section id="toy-example-two-moons">
-<h2>Toy Example – Two Moons<a class="headerlink" href="#toy-example-two-moons" title="Permalink to this headline">#</a></h2>
+<h2>Toy Example – Two Moons<a class="headerlink" href="#toy-example-two-moons" title="Link to this heading">#</a></h2>
 <p>Let’s start with the Two Moons data set – it is two-dimensional,
 which allows us to visualise the behaviour of each sampler and more easily
 convey the idea behind them.</p>
 <section id="loading-the-data">
-<h3>Loading the Data<a class="headerlink" href="#loading-the-data" title="Permalink to this headline">#</a></h3>
+<h3>Loading the Data<a class="headerlink" href="#loading-the-data" title="Link to this heading">#</a></h3>
 <p>We start by loading the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -791,10 +602,10 @@ convey the idea behind them.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:02:49 fatf         INFO     Seeding RNGs using the input parameter.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:34:45 fatf         INFO     Seeding RNGs using the input parameter.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:02:49 fatf         INFO     Seeding RNGs with 42.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:34:45 fatf         INFO     Seeding RNGs with 42.
 </pre></div>
 </div>
 </div>
@@ -808,14 +619,15 @@ convey the idea behind them.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x169a30e20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f3fafb4c5b0&gt;
 </pre></div>
 </div>
-<img alt="../../../../_images/data_sampling_6_1.svg" src="../../../../_images/data_sampling_6_1.svg" /></div>
+<img alt="../../../../_images/6c0da82fb730510f9234d3e1804e3cebc9341f3d82f0d856c8fe3c94a3d326d2.svg" src="../../../../_images/6c0da82fb730510f9234d3e1804e3cebc9341f3d82f0d856c8fe3c94a3d326d2.svg" />
+</div>
 </div>
 </section>
 <section id="loading-the-black-box-models">
-<h3>Loading the Black-Box Models<a class="headerlink" href="#loading-the-black-box-models" title="Permalink to this headline">#</a></h3>
+<h3>Loading the Black-Box Models<a class="headerlink" href="#loading-the-black-box-models" title="Link to this heading">#</a></h3>
 <p>Next, we load our <em>crisp</em> and <em>probabilistic</em> black boxes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -825,10 +637,10 @@ convey the idea behind them.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:02:49 fatf         INFO     Seeding RNGs using the input parameter.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:34:45 fatf         INFO     Seeding RNGs using the input parameter.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:02:49 fatf         INFO     Seeding RNGs with 42.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:34:45 fatf         INFO     Seeding RNGs with 42.
 </pre></div>
 </div>
 </div>
@@ -841,17 +653,17 @@ convey the idea behind them.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:02:49 fatf         INFO     Seeding RNGs using the input parameter.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:34:45 fatf         INFO     Seeding RNGs using the input parameter.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:02:49 fatf         INFO     Seeding RNGs with 42.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:34:45 fatf         INFO     Seeding RNGs with 42.
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="selecting-an-instance-to-be-explained">
-<h3>Selecting an Instance to be Explained<a class="headerlink" href="#selecting-an-instance-to-be-explained" title="Permalink to this headline">#</a></h3>
+<h3>Selecting an Instance to be Explained<a class="headerlink" href="#selecting-an-instance-to-be-explained" title="Link to this heading">#</a></h3>
 <p>Now, let’s select three instances to be explained – thus sampled around –
 each one with different characteristics:</p>
 <ul class="simple">
@@ -899,14 +711,15 @@ strategies.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x169b68ca0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f3f1c3b5100&gt;
 </pre></div>
 </div>
-<img alt="../../../../_images/data_sampling_12_1.svg" src="../../../../_images/data_sampling_12_1.svg" /></div>
+<img alt="../../../../_images/fba9b9c013d057141f5989e184cdf7d3a5b9e78a2ffd6f1ea40a33a626995382.svg" src="../../../../_images/fba9b9c013d057141f5989e184cdf7d3a5b9e78a2ffd6f1ea40a33a626995382.svg" />
+</div>
 </div>
 </section>
 <section id="sampling">
-<h3>Sampling<a class="headerlink" href="#sampling" title="Permalink to this headline">#</a></h3>
+<h3>Sampling<a class="headerlink" href="#sampling" title="Link to this heading">#</a></h3>
 <p>Let’s move on to sampling.
 We are going to sample 150 data points around each instance.</p>
 <div class="cell docutils container">
@@ -917,7 +730,7 @@ We are going to sample 150 data points around each instance.</p>
 </div>
 </div>
 <section id="normal-sampling">
-<h4>Normal Sampling<a class="headerlink" href="#normal-sampling" title="Permalink to this headline">#</a></h4>
+<h4>Normal Sampling<a class="headerlink" href="#normal-sampling" title="Link to this heading">#</a></h4>
 <p>We will start with <em>Normal Sampling</em>, which is accessible via the
 <a class="reference external" href="https://fat-forensics.org/generated/fatf.utils.data.augmentation.NormalSampling.html">fatf.data.utils.augmentation.NormalSampling</a>
 class.</p>
@@ -1039,14 +852,15 @@ which contains a more in-depth description.</em></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x169dc6be0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f3f1c3261c0&gt;
 </pre></div>
 </div>
-<img alt="../../../../_images/data_sampling_24_1.svg" src="../../../../_images/data_sampling_24_1.svg" /></div>
+<img alt="../../../../_images/eac8d7513f0e219dca5ceb22fec183a72affcd302ba135bdd00ae60c3dbcf325.svg" src="../../../../_images/eac8d7513f0e219dca5ceb22fec183a72affcd302ba135bdd00ae60c3dbcf325.svg" />
+</div>
 </div>
 </section>
 <section id="truncated-normal-sampling">
-<h4>Truncated Normal Sampling<a class="headerlink" href="#truncated-normal-sampling" title="Permalink to this headline">#</a></h4>
+<h4>Truncated Normal Sampling<a class="headerlink" href="#truncated-normal-sampling" title="Link to this heading">#</a></h4>
 <p><em>Truncated Normal Sampling</em> is accessible via the
 <a class="reference external" href="https://fat-forensics.org/generated/fatf.utils.data.augmentation.TruncatedNormalSampling.html">fatf.data.utils.augmentation.TruncatedNormalSampling</a>
 class.</p>
@@ -1154,14 +968,15 @@ to initialise this class.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x169f09c70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f3f1c1e5bb0&gt;
 </pre></div>
 </div>
-<img alt="../../../../_images/data_sampling_34_1.svg" src="../../../../_images/data_sampling_34_1.svg" /></div>
+<img alt="../../../../_images/610212ebf734e5c94240f39630a48682426d501658268dbf5254519da2331366.svg" src="../../../../_images/610212ebf734e5c94240f39630a48682426d501658268dbf5254519da2331366.svg" />
+</div>
 </div>
 </section>
 <section id="mixup-sampling">
-<h4>Mixup Sampling<a class="headerlink" href="#mixup-sampling" title="Permalink to this headline">#</a></h4>
+<h4>Mixup Sampling<a class="headerlink" href="#mixup-sampling" title="Link to this heading">#</a></h4>
 <p><em>Mixup Sampling</em> is accessible via the
 <a class="reference external" href="https://fat-forensics.org/generated/fatf.utils.data.augmentation.Mixup.html">fatf.data.utils.augmentation.Mixup</a>
 class.</p>
@@ -1173,8 +988,8 @@ and the instances randomly sampled from the data set.
 Given points <span class="math notranslate nohighlight">\(x_i\)</span>, <span class="math notranslate nohighlight">\(x_j\)</span> and their labels <span class="math notranslate nohighlight">\(y_i\)</span>, <span class="math notranslate nohighlight">\(y_j\)</span> drawn at random from the
 initialisation data set, and <span class="math notranslate nohighlight">\(\lambda\)</span> drawn from a Beta distribution,
 a new data point is created as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e237a9d5-f76a-42a7-b942-b88a40e02cdf">
-<span class="eqno">(1.7)<a class="headerlink" href="#equation-e237a9d5-f76a-42a7-b942-b88a40e02cdf" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f5cb7b5c-72ff-495e-9b88-dc6c55b73006">
+<span class="eqno">(1.12)<a class="headerlink" href="#equation-f5cb7b5c-72ff-495e-9b88-dc6c55b73006" title="Permalink to this equation">#</a></span>\[\begin{align}
 \tilde{x} &amp;= \lambda x_i + (1-\lambda)x_j \\
 \tilde{y} &amp;= \lambda y_i + (1-\lambda)y_j
 \end{align}\]</div>
@@ -1277,14 +1092,15 @@ a new data point is created as follows:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x169fdb8b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f3f1c052d60&gt;
 </pre></div>
 </div>
-<img alt="../../../../_images/data_sampling_44_1.svg" src="../../../../_images/data_sampling_44_1.svg" /></div>
+<img alt="../../../../_images/bbc64efe89255d248d3fe5075a9732b6694974ca79ac46a66209075bf9195af2.svg" src="../../../../_images/bbc64efe89255d248d3fe5075a9732b6694974ca79ac46a66209075bf9195af2.svg" />
+</div>
 </div>
 </section>
 <section id="normal-class-discovery">
-<h4>Normal Class Discovery<a class="headerlink" href="#normal-class-discovery" title="Permalink to this headline">#</a></h4>
+<h4>Normal Class Discovery<a class="headerlink" href="#normal-class-discovery" title="Link to this heading">#</a></h4>
 <p>Sampling with <em>Normal Class Discovery</em> is available via the
 <a class="reference external" href="https://fat-forensics.org/generated/fatf.utils.data.augmentation.NormalClassDiscovery.html">fatf.data.utils.augmentation.NormalClassDiscovery</a>
 class.</p>
@@ -1402,14 +1218,15 @@ proportion) are present in the sample.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x16a97dac0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f3f16289790&gt;
 </pre></div>
 </div>
-<img alt="../../../../_images/data_sampling_54_1.svg" src="../../../../_images/data_sampling_54_1.svg" /></div>
+<img alt="../../../../_images/2b01763d29fc32f8370b7a89972c8c01f74486853ab70d1d079ee8ec38060743.svg" src="../../../../_images/2b01763d29fc32f8370b7a89972c8c01f74486853ab70d1d079ee8ec38060743.svg" />
+</div>
 </div>
 </section>
 <section id="samplers-comparison">
-<h4>Samplers Comparison<a class="headerlink" href="#samplers-comparison" title="Permalink to this headline">#</a></h4>
+<h4>Samplers Comparison<a class="headerlink" href="#samplers-comparison" title="Link to this heading">#</a></h4>
 <p>To facilitate easier comparison of the samplers, let’s plot all of our results
 within a single figure.</p>
 <div class="cell docutils container">
@@ -1504,12 +1321,13 @@ within a single figure.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../../_images/data_sampling_57_0.svg" src="../../../../_images/data_sampling_57_0.svg" /></div>
+<img alt="../../../../_images/c78be18f974a9291658d90ecba2b99b22d985536a35a6ccf84a4f812b3acad00.svg" src="../../../../_images/c78be18f974a9291658d90ecba2b99b22d985536a35a6ccf84a4f812b3acad00.svg" />
+</div>
 </div>
 </section>
 </section>
 <section id="measuring-sampling-quality">
-<h3>Measuring Sampling Quality<a class="headerlink" href="#measuring-sampling-quality" title="Permalink to this headline">#</a></h3>
+<h3>Measuring Sampling Quality<a class="headerlink" href="#measuring-sampling-quality" title="Link to this heading">#</a></h3>
 <p>The final plot provides a comprehensive overview of our four sampling
 approaches.
 Diversity of our sample clearly depends on both:</p>
@@ -1588,7 +1406,7 @@ Both <em>Mixup</em> and <em>Class Discovery</em> do a good job in finding a dive
 sample regardless of the sampling location.</p>
 </section>
 <section id="sampling-from-interpretable-representations">
-<h3>Sampling from Interpretable Representations<a class="headerlink" href="#sampling-from-interpretable-representations" title="Permalink to this headline">#</a></h3>
+<h3>Sampling from Interpretable Representations<a class="headerlink" href="#sampling-from-interpretable-representations" title="Link to this heading">#</a></h3>
 <p>The sampling procedure depends on the type of explained data.
 For <em>images</em> and <em>text</em>, sampling <strong>must</strong> be performed in the
 <strong>binary interpretable representation</strong> since doing it in the original
@@ -1718,7 +1536,8 @@ we will undiscretise our sample twice.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../../_images/data_sampling_69_0.svg" src="../../../../_images/data_sampling_69_0.svg" /></div>
+<img alt="../../../../_images/ca10ba3133b9974e6d7097edd2fd8011399bb54f097b2be2f8304c575bbf9cc7.svg" src="../../../../_images/ca10ba3133b9974e6d7097edd2fd8011399bb54f097b2be2f8304c575bbf9cc7.svg" />
+</div>
 </div>
 <p>Clearly, the randomness of the <em>undiscretisation</em> step can be detrimental to reproducibility of surrogate explanations.
 Nonetheless, this procedure is worth understanding to appreciate the simplicity
@@ -1733,7 +1552,7 @@ opportunity to capture the local decision boundary.</p>
 </section>
 </section>
 <section id="real-life-data-bikes-sharing">
-<h2>Real-life Data – Bikes Sharing<a class="headerlink" href="#real-life-data-bikes-sharing" title="Permalink to this headline">#</a></h2>
+<h2>Real-life Data – Bikes Sharing<a class="headerlink" href="#real-life-data-bikes-sharing" title="Link to this heading">#</a></h2>
 <p>Now, let’s repeat the same experiments for the bikes data set.
 We will use <em>Normal</em>, <em>Truncated Normal</em>, <em>Mixup</em> and <em>Class Discovery</em>
 samplers with three instances:</p>
@@ -1747,7 +1566,7 @@ possible to 0.3 probability for all three classes; and</p></li>
 analysing the proportion of each class as well as measuring their
 purity scores.</p>
 <section id="loading-data-and-black-boxes">
-<h3>Loading Data and Black Boxes<a class="headerlink" href="#loading-data-and-black-boxes" title="Permalink to this headline">#</a></h3>
+<h3>Loading Data and Black Boxes<a class="headerlink" href="#loading-data-and-black-boxes" title="Link to this heading">#</a></h3>
 <p>We start by loading the <em>Bikes Sharing</em> data set and
 fitting two black boxes: one probabilistic and one crisp.</p>
 <div class="cell docutils container">
@@ -1764,10 +1583,10 @@ fitting two black boxes: one probabilistic and one crisp.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:02:51 fatf         INFO     Seeding RNGs using the input parameter.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:34:53 fatf         INFO     Seeding RNGs using the input parameter.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:02:51 fatf         INFO     Seeding RNGs with 42.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:34:53 fatf         INFO     Seeding RNGs with 42.
 </pre></div>
 </div>
 </div>
@@ -1780,10 +1599,10 @@ fitting two black boxes: one probabilistic and one crisp.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:02:51 fatf         INFO     Seeding RNGs using the input parameter.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:34:54 fatf         INFO     Seeding RNGs using the input parameter.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:02:51 fatf         INFO     Seeding RNGs with 42.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:34:54 fatf         INFO     Seeding RNGs with 42.
 </pre></div>
 </div>
 </div>
@@ -1796,17 +1615,17 @@ fitting two black boxes: one probabilistic and one crisp.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:02:51 fatf         INFO     Seeding RNGs using the input parameter.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:34:54 fatf         INFO     Seeding RNGs using the input parameter.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:02:51 fatf         INFO     Seeding RNGs with 42.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:34:54 fatf         INFO     Seeding RNGs with 42.
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="choosing-instances">
-<h3>Choosing Instances<a class="headerlink" href="#choosing-instances" title="Permalink to this headline">#</a></h3>
+<h3>Choosing Instances<a class="headerlink" href="#choosing-instances" title="Link to this heading">#</a></h3>
 <p>Now, we choose three instances to sample around.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1850,7 +1669,7 @@ Close Point Prediction: [0.2        0.45097643 0.34902357].
 </div>
 </section>
 <section id="testing-samplers">
-<h3>Testing Samplers<a class="headerlink" href="#testing-samplers" title="Permalink to this headline">#</a></h3>
+<h3>Testing Samplers<a class="headerlink" href="#testing-samplers" title="Link to this heading">#</a></h3>
 <p>Instead of testing the samplers one by one, let’s analyse all of them at once,
 akin to the side-by-side comparison of the samplers for the <em>Two Moons</em>
 data set.</p>
@@ -1947,10 +1766,10 @@ Another approach is to increase the number of iterations when calling the
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:02:51 fatf         INFO     Seeding RNGs using the input parameter.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:34:54 fatf         INFO     Seeding RNGs using the input parameter.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:02:51 fatf         INFO     Seeding RNGs with 42.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:34:54 fatf         INFO     Seeding RNGs with 42.
 </pre></div>
 </div>
 </div>
@@ -1995,7 +1814,8 @@ sample.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../../_images/data_sampling_83_0.svg" src="../../../../_images/data_sampling_83_0.svg" /></div>
+<img alt="../../../../_images/25135fb15b08d873c601b5ad3259f9bfc6aac205b63c050ab697cb178bd430c5.svg" src="../../../../_images/25135fb15b08d873c601b5ad3259f9bfc6aac205b63c050ab697cb178bd430c5.svg" />
+</div>
 </div>
 <p>(With <em>three</em> classes, the maximum impurity is <span class="math notranslate nohighlight">\(\frac{2}{3}\)</span>.)</p>
 <div class="cell docutils container">
@@ -2045,7 +1865,7 @@ sample.</p>
 </section>
 </section>
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>Throughout this notebook we relied on <em>Gini Impurity</em> and <em>crisp</em> classifiers.
 Nonetheless, a similar strategy for finding a useful data sample can be taken
 when dealing with <em>probabilistic</em> models – we need to replacing <em>Gini Impurity</em>
@@ -2069,7 +1889,7 @@ diverse data points to build a surrogate explainer.</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./book/meta_explainers/surrogates/tabular"
         },
         predefinedOutput: true
@@ -2077,55 +1897,130 @@ diverse data points to build a surrogate explainer.</p>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="interpretable_representation.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1.3.1. </span>Binary Interpretable Representations for Tabular Data</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="explanation_generation.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.3.3. </span>Explanation Generation</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By <a href="mailto:kacper@xmlx.io">Kacper Sokol</a> and <a href="mailto:team@xmlx.io">XMLX Team</a> &ndash; <a href="https://xmlx.io/">xmlx.io</a>.<br> Distributed under <a href="https://github.com/xmlx-io/xml-book/blob/master/LICENCE">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Licence</a>.
-<br/>
-  
-      &copy; Copyright 2021–2022.<br/>
-    <div class="extra_footer">
-      <p> This book delivers a comprehensive outlook on the most popular explainability concepts in Machine Learning. It covers a range of theoretical and practical topics across different difficulty levels, including but not limited to: high-level overviews & introductory examples; mathematical foundations; algorithmic implementations; practical advice & real-life caveats; and success & failure case studies. </p>
 
-    </div>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="interpretable_representation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1.4.1. </span>Binary Interpretable Representations for Tabular Data</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="explanation_generation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1.4.3. </span>Explanation Generation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toy-example-two-moons">Toy Example – Two Moons</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-data">Loading the Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-black-box-models">Loading the Black-Box Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-an-instance-to-be-explained">Selecting an Instance to be Explained</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling">Sampling</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-sampling">Normal Sampling</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#truncated-normal-sampling">Truncated Normal Sampling</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mixup-sampling">Mixup Sampling</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-class-discovery">Normal Class Discovery</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#samplers-comparison">Samplers Comparison</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-sampling-quality">Measuring Sampling Quality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-from-interpretable-representations">Sampling from Interpretable Representations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-life-data-bikes-sharing">Real-life Data – Bikes Sharing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-data-and-black-boxes">Loading Data and Black Boxes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-instances">Choosing Instances</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-samplers">Testing Samplers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="mailto:kacper@xmlx.dev">Kacper Sokol</a> and <a href="mailto:team@xmlx.dev">XMLX Team</a> &ndash; <a href="https://xmlx.dev/">xmlx.dev</a>. <br> Book distributed under <a href="https://github.com/xmlx-dev/xml-book/blob/master/LICENCE">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Licence</a>. <br> Code distributed under <a href="https://github.com/xmlx-dev/xml-book/blob/master/LICENCE-code"> MIT Licence</a>.
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021–2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p> This book delivers a comprehensive outlook on the most popular explainability concepts in Machine Learning. It covers a range of theoretical and practical topics across different difficulty levels, including but not limited to: high-level overviews & introductory examples; mathematical foundations; algorithmic implementations; practical advice & real-life caveats; and success & failure case studies. </p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

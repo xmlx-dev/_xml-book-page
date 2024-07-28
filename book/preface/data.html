@@ -1,126 +1,195 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Modules, Data Sets and Models &#8212; eXplainable&lt;br&gt;Machine Learning</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/xmlx.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/xmlx.css?v=cffff2e3" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=9d383507"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-6635EH38S9"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-6635EH38S9');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-6635EH38S9');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"IR": "\\mathit{IR}", "argmin": "\\mathop{\\operatorname{arg\\,min}}\\limits", "argmax": "\\mathop{\\operatorname{arg\\,max}}\\limits"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="canonical" href="https://book.xmlx.io/book/preface/data.html" />
-    <link rel="shortcut icon" href="../../_static/bulb.svg"/>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/preface/data';</script>
+    <link rel="canonical" href="https://book.xmlx.dev/book/preface/data.html" />
+    <link rel="icon" href="../../_static/bulb.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Meta-Explainers" href="../meta_explainers/index.html" />
     <link rel="prev" title="Preliminary Information" href="preliminary.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-6635EH38S9"></script>
-<script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){ dataLayer.push(arguments); }
-                    gtag('js', new Date());
-                    gtag('config', 'G-6635EH38S9');
-                </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/bulb.svg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">eXplainable<br>Machine Learning</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../_static/bulb.svg" class="logo__image only-light" alt="eXplainable<br>Machine Learning - Home"/>
+    <script>document.write(`<img src="../../_static/bulb.svg" class="logo__image only-dark" alt="eXplainable<br>Machine Learning - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -130,538 +199,343 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="index.html">
-   Preface
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="glossary.html">
-     Glossary
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="preliminary.html">
-     Preliminary Information
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Modules, Data Sets and Models
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../meta_explainers/index.html">
-   Meta-Explainers
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../meta_explainers/surrogates/index.html">
-     1. Surrogates
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../meta_explainers/surrogates/intro.html">
-       1.1. Overview
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../meta_explainers/surrogates/image.html">
-       1.2. Image Surrogates
-      </a>
-     </li>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="../meta_explainers/surrogates/tabular/index.html">
-       1.3. Tabular Surrogates
-      </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-      <label for="toctree-checkbox-4">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../meta_explainers/surrogates/tabular/interpretable_representation.html">
-         1.3.1. Binary Interpretable Representations for Tabular Data
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../meta_explainers/surrogates/tabular/data_sampling.html">
-         1.3.2. Data Sampling
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../meta_explainers/surrogates/tabular/explanation_generation.html">
-         1.3.3. Explanation Generation
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="../meta_explainers/surrogates/examples/index.html">
-       1.4. Interactive Examples
-      </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-      <label for="toctree-checkbox-5">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../meta_explainers/surrogates/examples/ex_tabular.html">
-         1.4.1. Surrogate Explainer of Tabular Data
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../meta_explainers/surrogates/examples/ex_ols.html">
-         1.4.2. Investigating Linear Surrogate Explainers of Tabular Data
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../bibliography/bibliography.html">
-   Bibliography
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../genindex.html">
-   Index
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://book.xmlx.io/docs/">
-   XML Book Documentation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://xmlx.io/">
-   XMLX Homepage
-  </a>
- </li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Preface</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preliminary.html">Preliminary Information</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Modules, Data Sets and Models</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../meta_explainers/index.html">Meta-Explainers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../meta_explainers/surrogates/index.html">1. Surrogates</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../meta_explainers/surrogates/intro.html">1.1. Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../meta_explainers/surrogates/text.html">1.2. Text Surrogates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../meta_explainers/surrogates/image.html">1.3. Image Surrogates</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../meta_explainers/surrogates/tabular/index.html">1.4. Tabular Surrogates</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../meta_explainers/surrogates/tabular/interpretable_representation.html">1.4.1. Binary Interpretable Representations for Tabular Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../meta_explainers/surrogates/tabular/data_sampling.html">1.4.2. Data Sampling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../meta_explainers/surrogates/tabular/explanation_generation.html">1.4.3. Explanation Generation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../meta_explainers/surrogates/examples/index.html">1.5. Interactive Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../meta_explainers/surrogates/examples/ex_tabular.html">1.5.1. Surrogate Explainer of Tabular Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../meta_explainers/surrogates/examples/ex_ols.html">1.5.2. Investigating Linear Surrogate Explainers of Tabular Data</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography/bibliography.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://book.xmlx.dev/docs/">XML Book Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://xmlx.dev/">XMLX Homepage</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            <a href="https://github.com/xmlx-io/xml-book/blob/master/LICENCE"><img src="https://img.shields.io/badge/licence-CC%20BY--NC--SA%204.0-lightgrey" alt="Licence"></a> </br> <a href="https://doi.org/XX.XXXX/zenodo.XXXXXXX"><img src="https://zenodo.org/badge/DOI/XX.XXXX/zenodo.XXXXXXX.svg" alt="DOI"></a>
-
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/xmlx-io/xml-book/master?urlpath=lab/tree/book/preface/data.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://colab.research.google.com/github/xmlx-io/xml-book/blob/master/book/preface/data.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../../_static/images/logo_colab.png">
-  </span>
-<span class="headerbtn__text-container">Colab</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/xmlx-dev/xml-book/master?urlpath=lab/tree/book/preface/data.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/xmlx-dev/xml-book/blob/master/book/preface/data.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/xmlx-dev/xml-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/xmlx-dev/xml-book/edit/master/book/preface/data.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/xmlx-dev/xml-book/issues/new?title=Issue%20on%20page%20%2Fbook/preface/data.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/book/preface/data.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../../_sources/book/preface/data.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/xmlx-io/xml-book"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/xmlx-io/xml-book/issues/new?title=Issue%20on%20page%20%2Fbook/preface/data.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/xmlx-io/xml-book/edit/master/book/preface/data.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/book/preface/data.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download notebook file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="../../_sources/book/preface/data.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </button>
-
-      </li>
+</div></div>
       
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
+    </div>
   
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#two-moons">
-   Two Moons
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bikes">
-   Bikes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#training-models">
-   Training Models
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Two Moons
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#random-forest">
-       Random Forest
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#support-vector-machine">
-       Support Vector Machine
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Bikes
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       Random Forest
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       Support Vector Machine
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#jupyter-variable-storage">
-   Jupyter Variable Storage
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Modules, Data Sets and Models</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#two-moons">
-   Two Moons
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bikes">
-   Bikes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#training-models">
-   Training Models
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Two Moons
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#random-forest">
-       Random Forest
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#support-vector-machine">
-       Support Vector Machine
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Bikes
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       Random Forest
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       Support Vector Machine
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#jupyter-variable-storage">
-   Jupyter Variable Storage
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Modules, Data Sets and Models</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-moons">Two Moons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bikes">Bikes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-models">Training Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Two Moons</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest">Random Forest</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#support-vector-machine">Support Vector Machine</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Bikes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Random Forest</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Support Vector Machine</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-variable-storage">Jupyter Variable Storage</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="modules-data-sets-and-models">
-<span id="text-preface-modules-data-models"></span><h1>Modules, Data Sets and Models<a class="headerlink" href="#modules-data-sets-and-models" title="Permalink to this headline">#</a></h1>
+<span id="text-preface-modules-data-models"></span><h1>Modules, Data Sets and Models<a class="headerlink" href="#modules-data-sets-and-models" title="Link to this heading">#</a></h1>
 <p>TODO: discuss the code in <code class="docutils literal notranslate"><span class="pre">_code</span></code>.</p>
 <p>This section briefly introduces example data sets that we will use throughout this book.</p>
 <ul class="simple">
@@ -697,7 +571,7 @@ Again, this functionality has already been integrated into the model creation fu
 </div>
 </div>
 <section id="two-moons">
-<h2>Two Moons<a class="headerlink" href="#two-moons" title="Permalink to this headline">#</a></h2>
+<h2>Two Moons<a class="headerlink" href="#two-moons" title="Link to this heading">#</a></h2>
 <p>First, let’s generate a <em>toy</em> data set that is two-dimensional and easy to visualise.
 It will help us to introduce plenty of concepts throughout this book.</p>
 <p>To this end, we use scikit-learn’s <code class="docutils literal notranslate"><span class="pre">sklearn.datasets.make_moons</span></code> function.
@@ -719,34 +593,32 @@ Then, we separate 20% of the data into a dedicated <em>test</em> set.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <figure class="align-default" id="fig-moons-train">
-<a class="reference internal image-reference" href="../../_images/data_5_0.svg"><img alt="moons-train" src="../../_images/data_5_0.svg" width="300px" /></a>
+<a class="reference internal image-reference" href="../../_images/2fd2ac6af9c6e898cc8656ce7f34132f51685ea3f839d78ae8b70e472c111434.svg"><img alt="moons-train" src="../../_images/2fd2ac6af9c6e898cc8656ce7f34132f51685ea3f839d78ae8b70e472c111434.svg" style="width: 300px;" /></a>
 <figcaption>
-<p><span class="caption-text"><p>Two Moons training data.</p>
-</span><a class="headerlink" href="#fig-moons-train" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Two Moons training data.</span><a class="headerlink" href="#fig-moons-train" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<figure class="align-default">
-<a class="reference internal image-reference" href="../../_images/data_6_0.svg"><img alt="moons-test" src="../../_images/data_6_0.svg" width="300px" /></a>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="../../_images/a5b5af864c1dc25601deada927d98c1e244c77443ac3864545335b6018896981.svg"><img alt="moons-test" src="../../_images/a5b5af864c1dc25601deada927d98c1e244c77443ac3864545335b6018896981.svg" style="width: 300px;" /></a>
 <figcaption>
-<p><span class="caption-text"><p>Two Moons test data.</p>
-</span></p>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Two Moons test data.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
 </div>
 </section>
 <section id="bikes">
-<h2>Bikes<a class="headerlink" href="#bikes" title="Permalink to this headline">#</a></h2>
+<h2>Bikes<a class="headerlink" href="#bikes" title="Link to this heading">#</a></h2>
 <p>Our second data set is <em>Bike Sharing</em>, which is distributed via the <a class="reference external" href="https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset">UCI repository</a>.
 It records a number of bike rentals (target) along various weather conditions and date artefacts (features).
 The version used in this tutorial has the following 11 features:</p>
 <ul class="simple">
 <li><p>season:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>winter,</p></li>
 <li><p>spring,</p></li>
 <li><p>summer, and</p></li>
@@ -755,7 +627,7 @@ The version used in this tutorial has the following 11 features:</p>
 </li>
 <li><p>year:
 0. 2011, and</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>2012;</p></li>
 </ol>
 </li>
@@ -765,7 +637,7 @@ The version used in this tutorial has the following 11 features:</p>
 <li><p>workingday – 1 if the day is neither during the weekend nor a holiday,
 otherwise 0;</p></li>
 <li><p>weathersit:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>clear, few clouds, partly cloudy, partly cloudy,</p></li>
 <li><p>mist + cloudy, mist + broken clouds, mist + few clouds, mist,</p></li>
 <li><p>light snow, light rain + thunderstorm + scattered clouds,
@@ -805,10 +677,10 @@ Let’s use it to load the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:03:12 fatf         INFO     Seeding RNGs using the input parameter.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:35:52 fatf         INFO     Seeding RNGs using the input parameter.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:03:12 fatf         INFO     Seeding RNGs with 42.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:35:52 fatf         INFO     Seeding RNGs with 42.
 </pre></div>
 </div>
 </div>
@@ -855,11 +727,12 @@ Testing instances number: 147.
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Class Distribution of Test Data&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/data_11_1.svg" src="../../_images/data_11_1.svg" /></div>
+<img alt="../../_images/ab019ecae0ac4eb04e80ce9253e72bf4d3655f470068b4476e3f97b4cc4b36c2.svg" src="../../_images/ab019ecae0ac4eb04e80ce9253e72bf4d3655f470068b4476e3f97b4cc4b36c2.svg" />
+</div>
 </div>
 </section>
 <section id="training-models">
-<h2>Training Models<a class="headerlink" href="#training-models" title="Permalink to this headline">#</a></h2>
+<h2>Training Models<a class="headerlink" href="#training-models" title="Link to this heading">#</a></h2>
 <p>Now, let’s train <em>black box</em> models on these data sets and evaluate their
 train and test set predictive performance.
 We will use two models:</p>
@@ -869,9 +742,9 @@ classifier; and</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sklearn.svm.SVC</span></code> operated as a <em>crisp</em> (non-probabilistic) classifier.</p></li>
 </ul>
 <section id="id1">
-<h3>Two Moons<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3>Two Moons<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <section id="random-forest">
-<h4>Random Forest<a class="headerlink" href="#random-forest" title="Permalink to this headline">#</a></h4>
+<h4>Random Forest<a class="headerlink" href="#random-forest" title="Link to this heading">#</a></h4>
 <p>Let’s start with a simple <em>probabilistic</em> model based on the Random Forest
 classifier.</p>
 <div class="cell docutils container">
@@ -882,10 +755,10 @@ classifier.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:03:13 fatf         INFO     Seeding RNGs using the input parameter.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:35:53 fatf         INFO     Seeding RNGs using the input parameter.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:03:13 fatf         INFO     Seeding RNGs with 42.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:35:53 fatf         INFO     Seeding RNGs with 42.
 </pre></div>
 </div>
 </div>
@@ -930,7 +803,7 @@ classifier.</p>
 </div>
 </section>
 <section id="support-vector-machine">
-<h4>Support Vector Machine<a class="headerlink" href="#support-vector-machine" title="Permalink to this headline">#</a></h4>
+<h4>Support Vector Machine<a class="headerlink" href="#support-vector-machine" title="Link to this heading">#</a></h4>
 <p>Next, we train a simple crisp (non-probabilistic) model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -940,10 +813,10 @@ classifier.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:03:13 fatf         INFO     Seeding RNGs using the input parameter.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:35:53 fatf         INFO     Seeding RNGs using the input parameter.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:03:13 fatf         INFO     Seeding RNGs with 42.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:35:53 fatf         INFO     Seeding RNGs with 42.
 </pre></div>
 </div>
 </div>
@@ -989,9 +862,9 @@ classifier.</p>
 </section>
 </section>
 <section id="id2">
-<h3>Bikes<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<h3>Bikes<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <section id="id3">
-<h4>Random Forest<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
+<h4>Random Forest<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
 <p>Let’s start with a simple <em>probabilistic</em> model based on the Random Forest
 classifier.</p>
 <div class="cell docutils container">
@@ -1002,10 +875,10 @@ classifier.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:03:13 fatf         INFO     Seeding RNGs using the input parameter.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:35:53 fatf         INFO     Seeding RNGs using the input parameter.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:03:13 fatf         INFO     Seeding RNGs with 42.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:35:53 fatf         INFO     Seeding RNGs with 42.
 </pre></div>
 </div>
 </div>
@@ -1050,7 +923,7 @@ classifier.</p>
 </div>
 </section>
 <section id="id4">
-<h4>Support Vector Machine<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
+<h4>Support Vector Machine<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
 <p>Next, we train a simple crisp (non-probabilistic) model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1060,10 +933,10 @@ classifier.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:03:13 fatf         INFO     Seeding RNGs using the input parameter.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:35:54 fatf         INFO     Seeding RNGs using the input parameter.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22-Jul-10 23:03:13 fatf         INFO     Seeding RNGs with 42.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24-Jul-28 12:35:54 fatf         INFO     Seeding RNGs with 42.
 </pre></div>
 </div>
 </div>
@@ -1110,7 +983,7 @@ classifier.</p>
 </section>
 </section>
 <section id="jupyter-variable-storage">
-<h2>Jupyter Variable Storage<a class="headerlink" href="#jupyter-variable-storage" title="Permalink to this headline">#</a></h2>
+<h2>Jupyter Variable Storage<a class="headerlink" href="#jupyter-variable-storage" title="Link to this heading">#</a></h2>
 <p>(<strong>This functionality is not available in Colab.</strong>)</p>
 <p>If you wish to reuse any of these variables in other notebooks,
 you can store and load them with Jupyter <em>magic</em>: <code class="docutils literal notranslate"><span class="pre">%store</span></code> and <code class="docutils literal notranslate"><span class="pre">%store</span> <span class="pre">-r</span></code>
@@ -1157,7 +1030,9 @@ respectively, e.g.:</p>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stored &#39;moons_data_dictionary&#39; (dict)
 Stored &#39;clf_moons_probabilistic&#39; (RandomForestClassifier)
-Stored &#39;clf_moons_crisp&#39; (SVC)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stored &#39;clf_moons_crisp&#39; (SVC)
 </pre></div>
 </div>
 </div>
@@ -1265,7 +1140,7 @@ You can also list all of the stored variables by using the <code class="docutils
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./book/preface"
         },
         predefinedOutput: true
@@ -1273,55 +1148,123 @@ You can also list all of the stored variables by using the <code class="docutils
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="preliminary.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Preliminary Information</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="preliminary.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Preliminary Information</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../meta_explainers/index.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../meta_explainers/index.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Meta-Explainers</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By <a href="mailto:kacper@xmlx.io">Kacper Sokol</a> and <a href="mailto:team@xmlx.io">XMLX Team</a> &ndash; <a href="https://xmlx.io/">xmlx.io</a>.<br> Distributed under <a href="https://github.com/xmlx-io/xml-book/blob/master/LICENCE">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Licence</a>.
-<br/>
-  
-      &copy; Copyright 2021–2022.<br/>
-    <div class="extra_footer">
-      <p> This book delivers a comprehensive outlook on the most popular explainability concepts in Machine Learning. It covers a range of theoretical and practical topics across different difficulty levels, including but not limited to: high-level overviews & introductory examples; mathematical foundations; algorithmic implementations; practical advice & real-life caveats; and success & failure case studies. </p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-    </div>
-</p>
-        </footer>
-    </div>
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-moons">Two Moons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bikes">Bikes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-models">Training Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Two Moons</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest">Random Forest</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#support-vector-machine">Support Vector Machine</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Bikes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Random Forest</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Support Vector Machine</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-variable-storage">Jupyter Variable Storage</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
     
+<p class="component-author">
+By <a href="mailto:kacper@xmlx.dev">Kacper Sokol</a> and <a href="mailto:team@xmlx.dev">XMLX Team</a> &ndash; <a href="https://xmlx.dev/">xmlx.dev</a>. <br> Book distributed under <a href="https://github.com/xmlx-dev/xml-book/blob/master/LICENCE">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Licence</a>. <br> Code distributed under <a href="https://github.com/xmlx-dev/xml-book/blob/master/LICENCE-code"> MIT Licence</a>.
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021–2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p> This book delivers a comprehensive outlook on the most popular explainability concepts in Machine Learning. It covers a range of theoretical and practical topics across different difficulty levels, including but not limited to: high-level overviews & introductory examples; mathematical foundations; algorithmic implementations; practical advice & real-life caveats; and success & failure case studies. </p>
+
 </div>
+  </div>
+  
+</div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

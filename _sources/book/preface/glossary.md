@@ -19,6 +19,9 @@ black box
 bLIMEy
   build {term}`LIME` yourself {cite:p}`sokol2019blimey`
 
+completeness
+  TODO
+
 counterfactual
   TODO
 
@@ -42,6 +45,9 @@ GDPR
 
 ICE
   Individual Conditional Expectation {cite:p}`goldstein2015peeking`
+
+information removal proxy
+  TODO
 
 IML
   Interpretable Machine Learning
@@ -94,8 +100,14 @@ scikit-image
 scikit-learn
   Python machine learning library used mainly for clustering, classification and regression tasks on tabular data {cite:p}`pedregosa2011scikit-learn`
 
+scope
+  TODO
+
 SLIC
   image segmentation algorithm based on k-means clustering in the RGB colour space {cite:p}`achanta2012slic`
+
+soundness
+  TODO
 
 super-pixel
   TODO

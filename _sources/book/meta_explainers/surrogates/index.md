@@ -157,20 +157,31 @@ Note that many packages only offer an interface to the official LIME implementat
 
 <h2> Contents of This Chapter </h2>
 
-This chapter is split into sections dedicated to different types of data, which are further subdivided into three components of surrogate explainers.
-Specifically, image and tabular data are discussed.
+This chapter is split into sections dedicated to different types of data -- {ref}`text<text:meta-explainers:surrogates:text>`, {ref}`image<text:meta-explainers:surrogates:image>` and {ref}`tabular<text:meta-explainers:surrogates:tabular>` -- each one covering the three components of surrogate explainers.
+It is loosely based on a 2020 ECML-PKDD hands-on tutorial titled
+[*What and How of Machine Learning Transparency: Building Bespoke Explainability Tools with Interoperable Algorithmic Components*](https://events.fat-forensics.org/2020_ecml-pkdd) {cite:p}`sokol2022what`.
 
 ```{list-table}
 :header-rows: 1
 
-* - Images
+* -
+  - Text
+  - Image
   - Tabular
-* - {numref}`Overview (§%s)<text:meta-explainers:surrogates:image>`
-  - {numref}`Overview (§%s)<text:meta-explainers:surrogates:tabular>`
-* - {numref}`Interpretable Representation (§%s)<text:meta-explainers:surrogates:image:interpretable-representation>`
-  - {numref}`Interpretable Representation (§%s)<text:meta-explainers:surrogates:tabular:interpretable-representation>`
-* - {numref}`Data Sampling (§%s)<text:meta-explainers:surrogates:image:data-sampling>`
-  - {numref}`Data Sampling (§%s)<text:meta-explainers:surrogates:tabular:data-sampling>`
-* - {numref}`Explanation Generation (§%s)<text:meta-explainers:surrogates:image:explanation-generation>`
-  - {numref}`Explanation Generation (§%s)<text:meta-explainers:surrogates:tabular:explanation-generation>`
+* - **Overview**
+  - {numref}`§%s<text:meta-explainers:surrogates:text>`
+  - {numref}`§%s<text:meta-explainers:surrogates:image>`
+  - {numref}`§%s<text:meta-explainers:surrogates:tabular>`
+* - **Interpretable Representation**
+  - {numref}`§%s<text:meta-explainers:surrogates:text:interpretable-representation>`
+  - {numref}`§%s<text:meta-explainers:surrogates:image:interpretable-representation>`
+  - {numref}`§%s<text:meta-explainers:surrogates:tabular:interpretable-representation>`
+* - **Data Sampling**
+  - {numref}`§%s<text:meta-explainers:surrogates:text:data-sampling>`
+  - {numref}`§%s<text:meta-explainers:surrogates:image:data-sampling>`
+  - {numref}`§%s<text:meta-explainers:surrogates:tabular:data-sampling>`
+* - **Explanation Generation**
+  - {numref}`§%s<text:meta-explainers:surrogates:text:explanation-generation>`
+  - {numref}`§%s<text:meta-explainers:surrogates:image:explanation-generation>`
+  - {numref}`§%s<text:meta-explainers:surrogates:tabular:explanation-generation>`
 ```
